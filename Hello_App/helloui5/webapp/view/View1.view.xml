@@ -1,0 +1,21 @@
+<mvc:View controllerName="helloui5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Text id="Greet" text="Hello SAPUI5!" />
+
+            <Button id="Button"
+                text="Click me"
+                press=".onPress" />
+
+            <VBox id="Box" class="sapUiSmallMargin">
+                <Text id="Welcome" text="Welcome" />
+
+                <Input id="Surname" placeholder="Enter your name" />
+
+                <Button id="Submit" text="Submit" press=".onPress" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
