@@ -9,13 +9,13 @@
                 text="Click me"
                 press=".onPress" />
 
-            <VBox id="Box" class="sapUiSmallMargin">
+            <HBox id="Box" class="sapUiSmallMargin">
                 <Text id="Welcome" text="Welcome" />
 
                 <Input id="Surname" placeholder="Enter your name" />
 
-                <Button id="Submit" text="Submit" press=".onPress" />
-            </VBox>
+                <Button id="Submit" text="Submit" press=".onSubmit" />
+            </HBox>
         </content>
     </Page>
 </mvc:View>
