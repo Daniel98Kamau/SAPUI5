@@ -1,5 +1,6 @@
 import BaseComponent from "sap/ui/core/UIComponent";
 import { createDeviceModel } from "./model/models";
+import { createUserModel } from "./model/models";
 
 /**
  * @namespace helloui5
@@ -22,5 +23,8 @@ export default class Component extends BaseComponent {
 
         // enable routing
         this.getRouter().initialize();
+
+        // set the user model
+        this.setModel(createUserModel(), "user");
 	}
 }

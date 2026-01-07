@@ -1,21 +1,22 @@
 <mvc:View controllerName="helloui5.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+
+    <Page id="Homepage" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Text id="Greet" text="Hello SAPUI5!" />
-
-            <Button id="Button"
-                text="Click me"
-                press=".onPress" />
-
-            <HBox id="Box" class="sapUiSmallMargin">
-                <Text id="Welcome" text="Welcome" />
-
-                <Input id="Surname" placeholder="Enter your name" />
-
-                <Button id="Submit" text="Submit" press=".onSubmit" />
-            </HBox>
+            <Text  id="subtitle" text="{i18n>subtitle}" textAlign="Center"/>
+            <VBox id="Description">
+                <Text id="description" text="{i18n>description}" textAlign="Center"/>
+                <Button id="btn1" text="{i18n>pressMe}" press=".onPress"/>
+                <Text id="user" text="{ parts: ['user>/firstName','user>/lastName'], formatter: '.formatter.fullName' }" />
+                <Button id="login" text="{= ${user>/loggedIn} ? 'Logout' : 'Login' }" press=".onLoginPress"/>
+                <Text id="status" text="Status: {= ${user>/loggedIn} ? 'Logged In' : 'Logged Out' }" />
+            </VBox>
+            <VBox id="footer">
+                <Text id="wlcm" text="{i18n>wlcm}" />
+                <Text id="loginPrompt" text="{i18n>loginPrompt}" />
+            </VBox>
         </content>
     </Page>
+
 </mvc:View>

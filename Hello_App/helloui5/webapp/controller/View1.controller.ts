@@ -13,10 +13,23 @@ export default class View1 extends Controller {
     }
 
     onPress(): void {
-    alert("Button clicked!");
+        alert("Button Pressed!");
     }
 
-    onSubmit(): void {
-        alert("Successfully submitted")
+    onloginPress(): void {
+        const oUserModel = this.getView()?.getModel("user") as JSONModel;
+        const bLoggedIn = oUserModel.getProperty("/user/loggedIn");
+        if (bLoggedIn) {
+            oUserModel.setProperty("/user/loggedIn", false);
+            MessageToast.show("You have successfully logged out.");
+        } else {
+            oUserModel.setProperty("/user/loggedIn", true);
+            MessageToast.show("You have successfully logged in.");
+        }
     }
+
+    private _getUserModel() {
+        return this.getView()?.getModel("user");
+    }
+    
 }
