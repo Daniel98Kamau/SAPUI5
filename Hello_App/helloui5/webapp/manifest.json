@@ -51,6 +51,11 @@
         "settings": {
           "bundleName": "helloui5.i18n.i18n"
         }
+      },
+
+      "invoice": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/localInvoices.json"
       }
     },
     "resources": {

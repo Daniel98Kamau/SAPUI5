@@ -10,6 +10,14 @@ export default class View1 extends Controller {
     /*eslint-disable @typescript-eslint/no-empty-function*/
     public onInit(): void {
         MessageToast.show("Your Exploration Begins Now!")
+        const data = {
+            user: {
+                name: "John Doe",
+                loggedIn: false
+            }
+        };
+        const dataModel = new JSONModel(data);
+        this.getView()?.setModel(dataModel, "user");
     }
 
     onPress(): void {
