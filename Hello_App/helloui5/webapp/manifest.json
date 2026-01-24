@@ -14,7 +14,14 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.19.6",
       "toolsId": "9f552826-c4c5-4796-9bf4-bfe5c5d2f86c"
+    },
+    "dataSources": {
+      "invoice": {
+        "uri": "model/localInvoices.json",
+        "type": "JSON"
+      }
     }
+    
   },
   "sap.ui": {
     "technology": "UI5",
@@ -54,8 +61,8 @@
       },
 
       "invoice": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/localInvoices.json"
+        "dataSource": "invoice",
+        "type": "sap.ui.model.json.JSONModel"
       }
     },
     "resources": {

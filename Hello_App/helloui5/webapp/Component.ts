@@ -1,4 +1,5 @@
 import BaseComponent from "sap/ui/core/UIComponent";
+import JSONModel from "sap/ui/model/json/JSONModel";
 import { createDeviceModel } from "./model/models";
 import { createUserModel } from "./model/models";
 
@@ -26,5 +27,10 @@ export default class Component extends BaseComponent {
 
         // set the user model
         this.setModel(createUserModel(), "user");
+
+        // set the local invoice model
+        const oInvoiceModel = new JSONModel();
+        oInvoiceModel.loadData("model/localInvoices.json");
+        this.setModel(oInvoiceModel, "invoice");
 	}
 }

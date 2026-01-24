@@ -26,6 +26,9 @@
                         valueLiveUpdate="true"
                         width="60%"/>
                 </Panel>
+                <mvc:XMLView 
+                    id="invoiceView" 
+                    viewName="helloui5.view.InvoiceList" />
                 </content>
             </Page>
         </pages>
