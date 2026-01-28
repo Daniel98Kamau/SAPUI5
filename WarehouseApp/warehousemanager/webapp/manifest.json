@@ -1,7 +1,7 @@
 {
   "_version": "1.76.0",
   "sap.app": {
-    "id": "warehousemanager",
+    "id": "warehouse",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.19.6",
-      "toolsId": "6ba31532-d79f-44b5-8219-27efdcf67167"
+      "toolsId": "1af102d9-3612-4c93-b7b4-1d2998081818"
     }
   },
   "sap.ui": {
@@ -49,7 +49,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "warehousemanager.i18n.i18n"
+          "bundleName": "warehouse.i18n.i18n"
         }
       }
     },
@@ -68,28 +68,28 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "warehousemanager.view",
+        "path": "warehouse.view",
         "async": true,
-        "viewPath": "warehousemanager.view"
+        "viewPath": "warehouse.view"
       },
       "routes": [
         {
-          "name": "RouteMyWarehouse",
+          "name": "RouteWarehouse",
           "pattern": ":?query:",
           "target": [
-            "TargetMyWarehouse"
+            "TargetWarehouse"
           ]
         }
       ],
       "targets": {
-        "TargetMyWarehouse": {
-          "id": "MyWarehouse",
-          "name": "MyWarehouse"
+        "TargetWarehouse": {
+          "id": "Warehouse",
+          "name": "Warehouse"
         }
       }
     },
     "rootView": {
-      "viewName": "warehousemanager.view.App",
+      "viewName": "warehouse.view.App",
       "type": "XML",
       "id": "App",
       "async": true
