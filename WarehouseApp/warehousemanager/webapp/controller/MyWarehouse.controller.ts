@@ -1,12 +1,12 @@
-import App from "./App.controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import { IProduct, IViewModel } from "../types/AppTypes";
+import { IProduct, IViewModel } from "../types/warehouseTypes";
 import MessageToast from "sap/m/MessageToast";
 import Fragment from "sap/ui/core/Fragment";
 import Dialog from "sap/m/Dialog";
+import App from "./App.controller";
 
 /**
- * @namespace warehouse.controller
+ * @namespace warehousemanager.controller
  */
 export default class Warehouse extends App {
 

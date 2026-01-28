@@ -1,4 +1,4 @@
-<mvc:View controllerName="warehouse.controller.Warehouse"
+<mvc:View controllerName="warehousemanager.controller.MyWarehouse"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     displayBlock="true">
