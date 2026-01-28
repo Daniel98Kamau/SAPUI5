@@ -29,8 +29,8 @@ export default class Component extends BaseComponent {
         this.setModel(createUserModel(), "user");
 
         // set the local invoice model
-        const oInvoiceModel = new JSONModel();
-        oInvoiceModel.loadData("model/localInvoices.json");
-        this.setModel(oInvoiceModel, "invoice");
+        //const oInvoiceModel = new JSONModel();
+        //oInvoiceModel.loadData("model/localInvoices.json");
+        //this.setModel(oInvoiceModel, "invoice");
 	}
 }

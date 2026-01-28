@@ -16,10 +16,13 @@
       "toolsId": "9f552826-c4c5-4796-9bf4-bfe5c5d2f86c"
     },
     "dataSources": {
-      "invoice": {
-        "uri": "model/localInvoices.json",
-        "type": "JSON"
-      }
+      "invoiceRemote": {
+				"uri": "V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
     }
     
   },
@@ -61,8 +64,12 @@
       },
 
       "invoice": {
-        "dataSource": "invoice",
-        "type": "sap.ui.model.json.JSONModel"
+        "dataSource": "invoiceRemote",
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "useBatch": false
+        }
       }
     },
     "resources": {
