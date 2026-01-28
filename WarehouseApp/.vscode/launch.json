@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Start warehouse",
+            "name": "Start warehousemanager",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/warehouse",
+            "cwd": "${workspaceFolder}/warehousemanager",
             "runtimeExecutable": "npx",
             "windows": {
                 "runtimeExecutable": "npx.cmd"
@@ -27,10 +27,10 @@
             }
         },
         {
-            "name": "Start warehouse Local",
+            "name": "Start warehousemanager Local",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/warehouse",
+            "cwd": "${workspaceFolder}/warehousemanager",
             "runtimeExecutable": "npx",
             "windows": {
                 "runtimeExecutable": "npx.cmd"
