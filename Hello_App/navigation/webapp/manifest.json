@@ -1,0 +1,109 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "navigation",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.6",
+      "toolsId": "ae1de7a2-7c35-43d7-83dd-25037b9ff704"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.144.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "navigation.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "App",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "navigation.view",
+        "async": true,
+        "viewPath": "navigation.view"
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": "",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteInvoiceList",
+          "pattern": "InvoiceList",
+          "target": [
+            "TargetInvoiceList"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "id": "Home",
+          "name": "Home"
+        },
+        "TargetInvoiceList": {
+          "id": "InvoiceList",
+          "name": "InvoiceList"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "navigation.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

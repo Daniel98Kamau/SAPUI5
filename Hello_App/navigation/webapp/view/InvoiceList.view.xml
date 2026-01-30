@@ -1,0 +1,19 @@
+<mvc:View 
+    controllerName="navigation.controller.InvoiceList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page 
+        id="invoiceListPage" 
+        title="{i18n>invoiceListTitle}"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <content>
+            <List id="invoiceList" headerText="{i18n>invoiceListTitle}">
+                <items>
+                    <StandardListItem id="invoice1" title="Invoice #12345" description="Pending" icon="sap-icon://invoice" />
+                    <StandardListItem id="invoice2" title="Invoice #67890" description="Paid" icon="sap-icon://accept" />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

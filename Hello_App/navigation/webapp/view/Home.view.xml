@@ -1,0 +1,19 @@
+<mvc:View controllerName="navigation.controller.Home"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="Homepage" 
+        title="{i18n>title}"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <content>
+            <Text id="welcome" text="{i18n>appDescription}"/>
+            <Button 
+                id="goToInvoiceList" 
+                text="{i18n>viewInvoicesBtn}" 
+                press="onGoToDetailsPress" 
+                type="Emphasized"
+                class="sapUiSmallMargin"/>
+        </content>
+    </Page>
+</mvc:View>
