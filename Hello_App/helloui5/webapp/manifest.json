@@ -98,12 +98,23 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "InvoiceList",
+          "pattern": "invoices",
+          "target": [
+            "TargetInvoiceList"
+          ]
         }
       ],
       "targets": {
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "TargetInvoiceList": {
+          "id": "InvoiceList",
+          "name": "InvoiceList"
         }
       }
     },

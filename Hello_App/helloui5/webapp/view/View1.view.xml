@@ -25,10 +25,10 @@
                         description="Hello {user>/name}"
                         valueLiveUpdate="true"
                         width="60%"/>
+                    <Button id="showInvoiceList" 
+                        text="{i18n>showInvoiceList}" 
+                        press=".onShowInvoiceList"/>
                 </Panel>
-                <mvc:XMLView 
-                    id="invoiceView" 
-                    viewName="helloui5.view.InvoiceList" />
                 </content>
             </Page>
         </pages>

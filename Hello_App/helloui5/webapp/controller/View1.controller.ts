@@ -39,5 +39,9 @@ export default class View1 extends Controller {
     private _getUserModel() {
         return this.getView()?.getModel("user");
     }
+
+    onShowInvoiceList(): void {
+        (this.getOwnerComponent() as any)?.getRouter()?.navTo("InvoiceList");
+    }
     
 }
