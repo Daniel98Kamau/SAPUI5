@@ -1,41 +1,63 @@
 <mvc:View
    controllerName="helloui5.controller.InvoiceList"
    xmlns="sap.m"
+   xmlns:uxap="sap.uxap"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
-   <List id="invoiceList"
-      class="sapUiResponsiveMargin"
-      width="auto"
-      items="{path : 'invoice>/Invoices',
-         sorter : {
-            path : 'ProductName' 
-         } }">
-      <headerToolbar>
-         <Toolbar id="invoiceListToolbar">
-            <Title id="invoiceTitle" text="{i18n>invoicesTitle}"/>
-            <ToolbarSpacer id="invoiceListToolbarSpacer"/>
-            <SearchField id="invoiceSearchField"
-               width="50%" 
-               search=".onFilterInvoices"/>
-         </Toolbar>
-      </headerToolbar>
-      <items>
-         <ObjectListItem id="invoiceItem"
-            core:require="{
-                  Currency: 'sap/ui/model/type/Currency'
-               }"
-               title="{invoice>Quantity} x {invoice>ProductName}"
-               number="{
-                  parts: [
-                      'invoice>ExtendedPrice',
-                     'view>/currency'
-                  ],
-                  type: 'Currency',
-                  formatOptions: {
-                     showMeasure: false
-                  }
-               }"
-               numberUnit="{view>/currency}"/>
-      </items>
-   </List>
+   <uxap:ObjectPageLayout 
+      id="invoiceObjects"
+      showTitleInHeaderContent="true"
+      showFooter="true"
+      upperCaseAnchorBar="false">
+      <uxap:headerTitle>
+         <uxap:ObjectPageDynamicHeaderTitle id="invoiceHeaderTitle">
+            <uxap:heading>
+               <Title id="invoiceHeading" text="{i18n>invoicesTitle}"/>
+            </uxap:heading>
+         </uxap:ObjectPageDynamicHeaderTitle>
+      </uxap:headerTitle>
+      <uxap:sections>
+         <uxap:ObjectPageSection id="invoiceListSection" title="{i18n>invoicesTitle}">
+            <uxap:subSections>
+               <uxap:ObjectPageSubSection id="invoiceListSubSection">
+                  <List id="invoiceList"
+                     class="sapUiResponsiveMargin"
+                     width="auto"
+                     items="{path : 'invoice>/Invoices',
+                        sorter : {
+                           path : 'ProductName' 
+                        } }">
+                     <headerToolbar>
+                        <Toolbar id="invoiceListToolbar">
+                           <Title id="invoiceTitle" text="{i18n>invoicesTitle}"/>
+                           <ToolbarSpacer id="invoiceListToolbarSpacer"/>
+                           <SearchField id="invoiceSearchField"
+                              width="50%" 
+                              search=".onFilterInvoices"/>
+                        </Toolbar>
+                     </headerToolbar>
+                     <items>
+                        <ObjectListItem id="invoiceItem"
+                           core:require="{
+                                 Currency: 'sap/ui/model/type/Currency'
+                              }"
+                              title="{invoice>Quantity} x {invoice>ProductName}"
+                              number="{
+                                 parts: [
+                                    'invoice>ExtendedPrice',
+                                    'view>/currency'
+                                 ],
+                                 type: 'Currency',
+                                 formatOptions: {
+                                    showMeasure: false
+                                 }
+                              }"
+                              numberUnit="{view>/currency}"/>
+                     </items>
+                  </List>
+               </uxap:ObjectPageSubSection>
+            </uxap:subSections>
+         </uxap:ObjectPageSection>
+      </uxap:sections>
+   </uxap:ObjectPageLayout>
 </mvc:View>
