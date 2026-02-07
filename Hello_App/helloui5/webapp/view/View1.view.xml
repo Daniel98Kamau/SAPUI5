@@ -5,30 +5,42 @@
     <Shell id="helloshell">
     <App id="helloapp">
         <pages>
-            <Page id="Homepage" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+            <Page id="Homepage">
+                <customHeader>
+                    <OverflowToolbar id="headerToolbar">
+                        <Button id="back" type="Back" press="onNavBack"/>
+                        <ToolbarSeparator id="toolbarSeparator"/>
+                        <Title id="title" text="{i18n>title}" />
+                        <ToolbarSpacer id="toolbarSpacer"/>
+                        <Button id="login" text="{= ${user>/loggedIn} ? 'Logout' : 'Login' }" press=".onLoginPress"/>
+                        <ToolbarSeparator id="spacedButtons1"/>
+                        <Button id="sign-up" text="Register" press=".onSignUpPress"/>
+                        <ToolbarSeparator id="spacedButtons2"/>
+                        <Button id="settings" icon="sap-icon://settings" press=".onSettingsPress"/>
+                    </OverflowToolbar>
+                </customHeader>
                 <content>
-                <Panel id="firstpanel">
+                <Panel id="mainPanel" class="sapUiResponsiveMargin" headerText="{i18n>subtitle}">
                     <Text  id="subtitle" text="{i18n>subtitle}" textAlign="Center"/>
                     <VBox id="Description">
                         <Text id="description" text="{i18n>description}" textAlign="Center"/>
                         <Button id="btn1" text="{i18n>pressMe}" press=".onPress"/>
+                        <Input id="inputField" 
+                            value="{user>/name}"
+                            description="Hello {user>/name}"
+                            valueLiveUpdate="true"
+                            width="60%"/>
                         <Text id="user" text="{ parts: ['user>/firstName','user>/lastName'], formatter: '.formatter.fullName' }" />
-                        <Button id="login" text="{= ${user>/loggedIn} ? 'Logout' : 'Login' }" press=".onLoginPress"/>
                         <Text id="status" text="Status: {= ${user>/loggedIn} ? 'Logged In' : 'Logged Out' }" />
                     </VBox>
-                    <VBox id="footer">
-                        <Text id="wlcm" text="{i18n>wlcm}" />
-                        <Text id="loginPrompt" text="{i18n>loginPrompt}" />
-                    </VBox>
-                    <Input id="inputField" 
-                        value="{user>/name}"
-                        description="Hello {user>/name}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
                     <Button id="showInvoiceList" 
                         text="{i18n>showInvoiceList}" 
                         press=".onShowInvoiceList"/>
                 </Panel>
+                    <HBox id="footer">
+                        <Text id="wlcm" text="{i18n>wlcm}" />
+                        <Text id="loginPrompt" text="{i18n>loginPrompt}" />
+                    </HBox>
                 </content>
             </Page>
         </pages>

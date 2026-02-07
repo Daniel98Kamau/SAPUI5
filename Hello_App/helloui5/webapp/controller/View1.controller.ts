@@ -1,6 +1,7 @@
 import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
+import Input from "sap/m/Input";
 
 /**
  * @namespace helloui5.controller
@@ -42,6 +43,14 @@ export default class View1 extends Controller {
 
     onShowInvoiceList(): void {
         (this.getOwnerComponent() as any)?.getRouter()?.navTo("InvoiceList");
+    }
+
+    onSignUpPress(): void {
+
+    }
+
+    onSettingsPress(): void {
+
     }
     
 }
